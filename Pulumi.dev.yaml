@@ -1,0 +1,12 @@
+
+config:
+  nginx-deployment:appName: nginx
+  nginx-deployment:namespace: nginx-dev
+  nginx-deployment:replicas: 1
+  nginx-deployment:nginxVersion: 1.21.6
+  nginx-deployment:cpuRequest: 100m
+  nginx-deployment:memoryRequest: 128Mi
+  nginx-deployment:cpuLimit: 200m
+  nginx-deployment:memoryLimit: 256Mi
+  nginx-deployment:serviceType: ClusterIP
+  nginx-deployment:port: 80

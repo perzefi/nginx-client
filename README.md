@@ -1,5 +1,3 @@
-# GCP Poject
+# NGINX Demo app
 
-A simple demo showcasing creation of a GCP infra, GKE cluster and nodes, installed a Pulumi operator.
-
-Code is write in TS and its implemented via Pulumi.
+This is a simple demo app which will be acting as a client and be deployed automatically using Pulumi Operator 
