@@ -1,0 +1,21 @@
+apiVersion: pulumi.com/v1
+kind: Stack
+metadata:
+  name: nginx-dev
+spec:
+  stack: dev  # Uses the dev stack configuration
+  projectRepo: https://github.com/perzefi/nginx-client  # Replace with your actual repo
+  branch: main
+  destroyOnFinalize: false  # Keep resources when the Stack CR is deleted
+  config:  # You can override config here too (optional)
+    nginx-deployment:appName: nginx-dev
+  envRefs:  # You can reference k8s secrets or configMaps
+    secretEnvs:
+      - secret: nginx-credentials
+        key: api_key
+        envName: NGINX_API_KEY
+  secrets:  # You can include secrets directly or reference them
+    provider: kubernetes
+    kubernetesSecrets:
+      - namespace: pulumi-operator
+        name: pulumi-api-secret

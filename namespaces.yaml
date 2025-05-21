@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-prod
