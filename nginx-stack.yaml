@@ -9,8 +9,10 @@ spec:
   destroyOnFinalize: false  # Keep resources when the Stack CR is deleted
   config:  # You can override config here too (optional)
     nginx-deployment:appName: nginx-dev
-  secrets:  # You can include secrets directly or reference them
-    provider: kubernetes
-    kubernetesSecrets:
-      - namespace: pulumi-kubernetes-operator
+  secretsProvider: "kubernetes"
+  envRefs:
+    pulumiAccessToken:
+      type: Secret
+      secret:
         name: pulumi-api-secret
+        key: PULUMI_ACCESS_TOKEN
