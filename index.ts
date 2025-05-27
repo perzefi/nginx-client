@@ -4,7 +4,7 @@ import * as k8s from "@pulumi/kubernetes";
 // Get stack-specific configuration
 const config = new pulumi.Config();
 const appName = config.get("appName") || "nginx";
-const namespace = config.get("namespace") || "default";
+const namespace = config.get("namespace") || "pulumi";
 const replicas = config.getNumber("replicas") || 2;
 const nginxVersion = config.get("nginxVersion") || "latest";
 const cpuRequest = config.get("cpuRequest") || "100m";
